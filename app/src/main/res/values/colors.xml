@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2e3339</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#ffb842</color>
+    <color name="snowText">#D9F5FF</color>
+    <color name="testText">#e2e9ed</color>
+    <color name="rowText">#D9F5FF</color>
+    <color name="rowVal">#FFAAAA</color>
+    <color name="mainYellow">#ffb842</color>
+    <color name="darkGrey">#2e3339</color>
+    <color name="mainGrey">#3e4750</color>
+    <color name="inputColor">#aeb1b6</color>
+    <color name="inputHintColor">#daaeb1b6</color>
+    <color name="bg_color">#343b45</color>
+</resources>

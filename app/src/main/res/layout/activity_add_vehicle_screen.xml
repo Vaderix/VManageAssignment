@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".AddVehicleScreen">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pageHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_grad"
+        android:paddingVertical="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/arctik_4"
+            android:text="Add Vehicle"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/homeButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/homeButton" />
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/curve_bg_yellow"
+            android:fontFamily="@font/texgyr_bold"
+            android:onClick="onHome"
+            android:text="Home"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pageHeader">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/pleaseCapText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curve_bg_grey"
+                android:fontFamily="@font/texgyr_reg"
+                android:gravity="center"
+                android:paddingVertical="10dp"
+                android:text="Please capture the image"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/capturedImage"
+                android:layout_width="350dp"
+                android:layout_height="205dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pleaseCapText"
+                app:srcCompat="@drawable/upload_img_image" />
+
+            <ImageButton
+                android:id="@+id/captureButton"
+                android:layout_width="145dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:background="@null"
+                android:onClick="onCapture"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/capturedImage"
+                app:srcCompat="@drawable/capture_but_image" />
+
+            <TextView
+                android:id="@+id/plateNumTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/texgyr_bold"
+                android:text="• Plate Number:"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/captureButton" />
+
+            <EditText
+                android:id="@+id/plateNumText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:background="@drawable/curve_bg_grey"
+                android:ems="10"
+                android:fontFamily="@font/texgyr_bold"
+                android:inputType="text"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="10dp"
+                android:text=""
+                android:textColor="@color/inputColor"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/editNumButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/plateNumTextview" />
+
+            <ImageButton
+                android:id="@+id/editNumButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="32dp"
+                android:background="@null"
+                android:onClick="onEdit"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="@id/plateNumText"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/plateNumText"
+                app:srcCompat="@drawable/edit_icon_image" />
+
+            <RadioGroup
+                android:id="@+id/vehicleTypeRGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="32dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/plateNumText">
+
+                <RadioButton
+                    android:id="@+id/radioTwoWh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/arctik_4"
+                    android:text="Two Wheeler"
+                    android:textColor="@color/testText"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/radioFourWh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/arctik_4"
+                    android:text="Four Wheeler"
+                    android:textColor="@color/testText"
+                    android:textSize="20sp" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/ownerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/texgyr_bold"
+                android:text="• Owner:"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vehicleTypeRGroup" />
+
+            <EditText
+                android:id="@+id/ownerValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/curve_bg_grey"
+                android:ems="10"
+                android:fontFamily="@font/texgyr_bold"
+                android:hint="Owner"
+                android:inputType="text"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="10dp"
+                android:text=""
+                android:textColor="@color/inputColor"
+                android:textColorHint="@color/inputHintColor"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ownerText" />
+
+            <TextView
+                android:id="@+id/addressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/texgyr_bold"
+                android:text="• Address:"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ownerValue" />
+
+            <EditText
+                android:id="@+id/addressValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/curve_bg_grey"
+                android:ems="10"
+                android:fontFamily="@font/texgyr_bold"
+                android:hint="Address"
+                android:inputType="text"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="10dp"
+                android:text=""
+                android:textColor="@color/inputColor"
+                android:textColorHint="@color/inputHintColor"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addressText" />
+
+            <TextView
+                android:id="@+id/mobNoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/texgyr_bold"
+                android:text="• Mobile Number:"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addressValue" />
+
+            <EditText
+                android:id="@+id/mobNoValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/curve_bg_grey"
+                android:ems="10"
+                android:fontFamily="@font/texgyr_bold"
+                android:hint="Mobile Number"
+                android:inputType="phone"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="10dp"
+                android:text=""
+                android:textColor="@color/inputColor"
+                android:textColorHint="@color/inputHintColor"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mobNoText" />
+
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="150dp"
+                android:fontFamily="@font/texgyr_bold"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/curve_bg_yellow"
+                android:onClick="onSave"
+                android:text="Save"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mobNoValue" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pageHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_grad"
+        android:paddingVertical="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/dashboardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/texgyr_bold"
+            android:text="Dashboard"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/logoutButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/logoutButton" />
+
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/curve_bg_yellow"
+            android:fontFamily="@font/texgyr_bold"
+            android:onClick="onLogout"
+            android:text="Logout"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/vehManageText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/mainGrey"
+        android:fontFamily="@font/pure"
+        android:gravity="center"
+        android:paddingHorizontal="20sp"
+        android:paddingVertical="15sp"
+        android:text="Vehicle Management"
+        android:textColor="@color/mainYellow"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pageHeader" />
+
+    <LinearLayout
+        android:id="@+id/linearWrap"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vehManageText">
+
+        <Button
+            android:id="@+id/addVehicleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/mainGrey"
+            android:fontFamily="@font/pure"
+            android:paddingVertical="30dp"
+            android:text="Add Vehicle"
+            android:textColor="#FFFFFF"
+            android:onClick="onAddVClick"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/viewDetailsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/darkGrey"
+            android:fontFamily="@font/pure"
+            android:paddingVertical="30dp"
+            android:text="View Details"
+            android:layout_marginBottom="10dp"
+            android:textColor="#FFFFFF"
+            android:onClick="onViewVClick"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearWrap" />
+
+    <Button
+        android:id="@+id/adminCP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="#FFFFFF"
+        android:background="@color/mainGrey"
+        android:layout_marginBottom="16dp"
+        android:text="Admin Control Panel"
+        android:onClick="onAdminCP"
+        android:textSize="16sp"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/retrieveButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:paddingVertical="25dp"
+        android:paddingHorizontal="10dp"
+        android:textSize="24sp"
+        android:background="@color/mainYellow"
+        android:textColor="#FFFFFF"
+        android:onClick="onRetrieveClicked"
+        android:fontFamily="@font/pure"
+        android:layout_marginEnd="32dp"
+        android:text="Retrieve Vehicle Details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <EditText
+        android:id="@+id/numPlateVal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/curve_bg_grey"
+        android:ems="10"
+        android:fontFamily="@font/texgyr_bold"
+        android:hint="Number Plate"
+        android:inputType="text"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/inputColor"
+        android:textColorHint="@color/inputHintColor"
+        app:layout_constraintEnd_toStartOf="@+id/submitButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/retrieveButton" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="Submit"
+        android:background="@color/darkGrey"
+        android:textColor="#FFFFFF"
+        android:onClick="onSubmitClicked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/retrieveButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

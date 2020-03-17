@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/upload_img_image" />
+
+    <TextView
+        android:id="@+id/plateNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:text="• Plate Number:"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/texgyr_bold"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/plateNumValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/texgyr_bold"
+        android:text="DL10NE8099"
+        android:textColor="#9E9E9E"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/plateNumText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/plateNumText"
+        app:layout_constraintTop_toTopOf="@+id/plateNumText" />
+
+    <TextView
+        android:id="@+id/vehicleTypeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/texgyr_bold"
+        android:text="• Vehicle Type:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plateNumText" />
+
+    <TextView
+        android:id="@+id/vehicleTypeValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/texgyr_bold"
+        android:text="4WH"
+        android:textColor="#9E9E9E"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/vehicleTypeText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/plateNumValue"
+        app:layout_constraintTop_toTopOf="@+id/vehicleTypeText" />
+
+    <TextView
+        android:id="@+id/ownerNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/texgyr_bold"
+        android:text="• Owner name:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vehicleTypeText" />
+
+    <TextView
+        android:id="@+id/ownerNameValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/texgyr_bold"
+        android:text="Kryptone"
+        android:textColor="#9E9E9E"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ownerNameText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vehicleTypeValue"
+        app:layout_constraintTop_toTopOf="@+id/ownerNameText" />
+
+    <TextView
+        android:id="@+id/mobileNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/texgyr_bold"
+        android:text="• Mobile No:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ownerNameText" />
+
+    <TextView
+        android:id="@+id/mobNumValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/texgyr_bold"
+        android:text="9711110002"
+        android:textColor="#9E9E9E"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/mobileNumText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ownerNameValue"
+        app:layout_constraintTop_toTopOf="@+id/mobileNumText" />
+
+    <TextView
+        android:id="@+id/addressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/texgyr_bold"
+        android:text="• Address:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mobileNumText" />
+
+    <TextView
+        android:id="@+id/addressValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/texgyr_bold"
+        android:text="Somewhere, Here, and There, Everywhere"
+        android:textColor="#9E9E9E"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressText" />
+
+    <ImageView
+        android:id="@+id/dividerIMG"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressValue"
+        app:srcCompat="@drawable/blank_img" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

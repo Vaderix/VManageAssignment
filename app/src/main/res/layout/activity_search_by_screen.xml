@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".SearchByScreen">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pageHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_grad"
+        android:paddingVertical="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/arctik_4"
+            android:text="Search By"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/backButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/backButton" />
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/curve_bg_yellow"
+            android:fontFamily="@font/texgyr_bold"
+            android:onClick="onBack"
+            android:text="Back"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/selectColumnText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/pure"
+        android:textSize="20sp"
+        android:text="Select the column you want to search by:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pageHeader" />
+
+    <ImageView
+        android:id="@+id/colDividerIMG"
+        android:layout_width="3dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/columnGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/columnGroup"
+        app:srcCompat="@drawable/blank_img" />
+
+    <RadioGroup
+        android:id="@+id/columnGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/colDividerIMG"
+        app:layout_constraintStart_toStartOf="@+id/selectColumnText"
+        app:layout_constraintTop_toBottomOf="@+id/selectColumnText">
+
+        <RadioButton
+            android:id="@+id/plateNumRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/texgyr_bold"
+            android:text="Plate Number"
+            android:textColor="#CFD8DC"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/ownerNameRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/texgyr_bold"
+            android:text="Owner Name"
+            android:textColor="#CFD8DC"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/addressRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/texgyr_bold"
+            android:text="Address"
+            android:textColor="#CFD8DC"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/mobileNumRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/texgyr_bold"
+            android:text="Mobile No"
+            android:textColor="#CFD8DC"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/vehicleTypeRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/texgyr_bold"
+            android:textColor="#CFD8DC"
+            android:text="Vehicle Type"
+            android:textSize="20sp" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/operatorGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/colDividerIMG"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/colDividerIMG"
+        app:layout_constraintTop_toBottomOf="@id/selectOpText">
+
+        <RadioButton
+            android:id="@+id/eqRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/texgyr_bold"
+            android:text="Equal"
+            android:textColor="#CFD8DC"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/eqHRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/texgyr_bold"
+            android:text="Equal or Higher"
+            android:textColor="#CFD8DC"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/eqLRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/texgyr_bold"
+            android:textColor="#CFD8DC"
+            android:textSize="16sp"
+            android:text="Equal or Lower" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/selectOpText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pure"
+        android:text="Select Operator"
+        android:gravity="center"
+        android:textColor="@color/mainYellow"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/columnGroup"
+        app:layout_constraintTop_toTopOf="@+id/colDividerIMG" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/pure"
+        android:text="Enter Value"
+        android:textColor="@color/mainYellow"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/columnGroup" />
+
+    <EditText
+        android:id="@+id/searchValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/curve_bg_grey"
+        android:ems="10"
+        android:fontFamily="@font/texgyr_bold"
+        android:hint="Value"
+        android:inputType="text"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/inputColor"
+        android:textColorHint="@color/inputHintColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView5" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/pure"
+        android:text="In case of Vehicle Type"
+        android:textColor="@color/mainYellow"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchValue" />
+
+    <RadioGroup
+        android:id="@+id/vehicleTypeGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+        <RadioButton
+            android:id="@+id/twoWhRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2 - Wheeler"
+            android:fontFamily="@font/texgyr_bold"
+            android:textColor="#CFD8DC"
+            android:textSize="16sp"/>
+
+        <RadioButton
+            android:id="@+id/fourWhRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="4 - Wheeler"
+            android:fontFamily="@font/texgyr_bold"
+            android:textColor="#CFD8DC"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/curve_bg_yellow"
+        android:fontFamily="@font/texgyr_bold"
+        android:onClick="onSearch"
+        android:text="Search"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vehicleTypeGroup" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

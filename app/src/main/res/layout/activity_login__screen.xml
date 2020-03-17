@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".Login_Screen">
+
+    <FrameLayout
+        android:id="@+id/logo_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/curve_bg_yellow"
+        android:padding="20dp"
+        android:rotation="45"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/car_logo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:rotation="-45"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/car_logo" />
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/logo_shadow"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="70dp"
+        android:background="#313840"
+        android:rotation="45"
+        app:layout_constraintStart_toStartOf="@+id/logo_frame"
+        app:layout_constraintTop_toTopOf="@+id/logo_frame" />
+
+    <TextView
+        android:id="@+id/dashboardText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/arctik_4"
+        android:text="Welcome"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_frame" />
+
+    <TextView
+        android:id="@+id/vehManageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="to Vehicle Management"
+        android:fontFamily="@font/arctik_4"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/dashboardText"
+        app:layout_constraintStart_toStartOf="@+id/dashboardText"
+        app:layout_constraintTop_toBottomOf="@+id/dashboardText" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/userpass_wrap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/anonLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vehManageText">
+
+        <FrameLayout
+            android:id="@+id/userIconFrame"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="50dp"
+            android:background="@drawable/curve_bg_darkgrey"
+            app:layout_constraintBottom_toBottomOf="@+id/username"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/username">
+
+            <ImageView
+                android:id="@+id/userIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_user" />
+        </FrameLayout>
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/curve_bg_grey"
+            android:ems="10"
+            android:fontFamily="@font/texgyr_bold"
+            android:hint="Username"
+            android:inputType="text"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="10dp"
+            android:textColor="@color/inputColor"
+            android:textColorHint="@color/inputHintColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/userIconFrame"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/passIconFrame"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="50dp"
+            android:background="@drawable/curve_bg_darkgrey"
+            app:layout_constraintBottom_toBottomOf="@+id/password"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/password">
+
+            <ImageView
+                android:id="@+id/passIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_pass" />
+        </FrameLayout>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/curve_bg_grey"
+            android:ems="10"
+            android:fontFamily="@font/texgyr_bold"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="10dp"
+            android:textColor="@color/inputColor"
+            android:textColorHint="@color/inputHintColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/passIconFrame"
+            app:layout_constraintTop_toBottomOf="@+id/username" />
+
+        <CheckBox
+            android:id="@+id/remMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:buttonTint="#ffb842"
+            android:fontFamily="@font/texgyr_reg"
+            android:text="Remember Me"
+            android:textColor="#aeb1b6"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/signIn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/signIn" />
+
+        <Button
+            android:id="@+id/signIn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/curve_bg_yellow"
+            android:fontFamily="@font/texgyr_bold"
+            android:text="LOGIN"
+            android:onClick="onSignIn"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/remMe"
+            app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/anonLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/curve_bg_grey"
+        android:fontFamily="@font/pure"
+        android:paddingVertical="20dp"
+        android:text="ANONYMOUS LOGIN"
+        android:textColor="#FFFFFF"
+        android:onClick="anonSignIn"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/anonLoginHead"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/anonLoginHead"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/curve_bg_yellow"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="anonSignIn"
+        app:layout_constraintBottom_toBottomOf="@+id/anonLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/anonLogin">
+
+        <TextView
+            android:id="@+id/anonGoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/arctik_4"
+            android:text=">>"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

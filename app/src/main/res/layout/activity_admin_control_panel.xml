@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".AdminControlPanel">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pageHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_grad"
+        android:paddingVertical="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/arctik_4"
+            android:text="Welcome"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/homeButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/homeButton" />
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/curve_bg_yellow"
+            android:fontFamily="@font/texgyr_bold"
+            android:onClick="onHome"
+            android:text="Home"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/createAccText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/darkGrey"
+        android:fontFamily="@font/pure"
+        android:gravity="center"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:text="Create new account"
+        android:textColor="@color/mainYellow"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pageHeader" />
+
+    <TextView
+        android:id="@+id/usernameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/texgyr_bold"
+        android:text="• Username:"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createAccText" />
+
+    <TextView
+        android:id="@+id/passText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/texgyr_bold"
+        android:text="• Password:"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameText" />
+
+    <TextView
+        android:id="@+id/mobNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/texgyr_bold"
+        android:text="• Mobile No:"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passText" />
+
+    <EditText
+        android:id="@+id/usernameValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/curve_bg_grey"
+        android:ems="10"
+        android:fontFamily="@font/texgyr_bold"
+        android:hint="Username"
+        android:inputType="text"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/inputColor"
+        android:textColorHint="@color/inputHintColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/usernameText"
+        app:layout_constraintTop_toTopOf="@id/usernameText" />
+
+    <EditText
+        android:id="@+id/passValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/curve_bg_grey"
+        android:ems="10"
+        android:fontFamily="@font/texgyr_bold"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/inputColor"
+        android:textColorHint="@color/inputHintColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/usernameValue"
+        app:layout_constraintTop_toTopOf="@id/passText" />
+
+    <EditText
+        android:id="@+id/mobNumValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/curve_bg_grey"
+        android:ems="10"
+        android:fontFamily="@font/texgyr_bold"
+        android:hint="Mobile No"
+        android:inputType="phone"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/inputColor"
+        android:textColorHint="@color/inputHintColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/usernameValue"
+        app:layout_constraintTop_toTopOf="@id/mobNumText" />
+
+    <Button
+        android:id="@+id/sendOTPButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/curve_bg_yellow"
+        android:fontFamily="@font/texgyr_bold"
+        android:text="Send OTP"
+        android:onClick="onSendOTP"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mobNumText" />
+
+    <EditText
+        android:id="@+id/valueOTP"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/curve_bg_grey"
+        android:ems="10"
+        android:fontFamily="@font/texgyr_bold"
+        android:hint="Enter OTP"
+        android:inputType="phone"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/inputColor"
+        android:textColorHint="@color/inputHintColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/usernameValue"
+        app:layout_constraintTop_toTopOf="@id/sendOTPButton" />
+
+    <TextView
+        android:id="@+id/timerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/sendOTPButton"
+        app:layout_constraintStart_toStartOf="@+id/sendOTPButton"
+        app:layout_constraintTop_toBottomOf="@+id/sendOTPButton" />
+
+    <Button
+        android:id="@+id/addAccountButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="32dp"
+        android:onClick="onAddAccount"
+        android:background="@color/mainGrey"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:paddingVertical="10sp"
+        android:paddingHorizontal="15sp"
+        android:fontFamily="@font/arctik_4"
+        android:text="Add Account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valueOTP" />
+
+    <Button
+        android:id="@+id/changePassButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/mainYellow"
+        android:fontFamily="@font/arctik_4"
+        android:onClick="onChangePass"
+        android:paddingHorizontal="15sp"
+        android:paddingVertical="10sp"
+        android:text="Change Password"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addAccountButton" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/changePassButton">
+
+
+        <Button
+            android:id="@+id/exportDB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onExport"
+            android:text="Export DB" />
+
+        <Button
+            android:id="@+id/importDB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onImport"
+            android:text="Import DB" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

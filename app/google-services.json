@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "985812484743",
+    "firebase_url": "https://vmanageassignment.firebaseio.com",
+    "project_id": "vmanageassignment",
+    "storage_bucket": "vmanageassignment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985812484743:android:348b07b511399fa421ee22",
+        "android_client_info": {
+          "package_name": "com.datdevteam.vmanageassignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985812484743-e7t6d3l1eulsie2ocfgent6quks95jv8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBmIGqPLsANl73UKJBpOnIisxJq48rz0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985812484743-e7t6d3l1eulsie2ocfgent6quks95jv8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
